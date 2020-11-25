@@ -10,8 +10,11 @@ class ChristmasCard {
 
 class MyState extends ChangeNotifier {
   List<ChristmasCard> _list = [];
+  String _filterBy = 'all';
 
   List<ChristmasCard> get list => _list;
+
+  String get filterBy => _filterBy;
 
   void addCard(ChristmasCard card) {
     _list.add(card);
@@ -20,6 +23,11 @@ class MyState extends ChangeNotifier {
 
   void removeCard(ChristmasCard card) {
     _list.remove(card);
+    notifyListeners();
+  }
+
+  void setFilterBy(String filterBy) {
+    this._filterBy = filterBy;
     notifyListeners();
   }
 }
