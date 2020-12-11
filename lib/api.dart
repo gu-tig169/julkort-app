@@ -18,7 +18,7 @@ class Api {
   }
 
   static Future deleteCard(String cardId) async {
-    await http.delete('$API_URL/julkort/$cardId?key=$API_KEY');
+    await http.delete('$API_URL/julkort/$cardId?key=$API_KEY&_confirm=true');
   }
 
   static Future<List<ChristmasCard>> getCards() async {
