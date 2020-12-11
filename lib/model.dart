@@ -42,8 +42,11 @@ class ChristmasCard {
 
 class MyState extends ChangeNotifier {
   List<ChristmasCard> _list = [];
+  String _filterBy = 'all';
 
   List<ChristmasCard> get list => _list;
+
+  String get filterBy => _filterBy;
 
   Future getList() async {
     List<ChristmasCard> list = await Api.getCards();
@@ -59,5 +62,10 @@ class MyState extends ChangeNotifier {
   void removeCard(ChristmasCard card) async {
     await Api.deleteCard(card.id);
     await getList();
+  }
+
+  void setFilterBy(String filterBy) {
+    this._filterBy = filterBy;
+    notifyListeners();
   }
 }
