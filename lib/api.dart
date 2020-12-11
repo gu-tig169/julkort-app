@@ -3,8 +3,8 @@ import 'dart:convert';
 import 'package:julkort/model.dart';
 import 'package:http/http.dart' as http;
 
-const API_URL = 'http://10.0.2.2:3000';
 const API_KEY = '2d8b24a5-c30d-4cb6-bc35-e2b1bedfd5b4';
+const API_URL = 'http://10.0.2.2:3000';
 
 class Api {
   static Future addCard(ChristmasCard card) async {
