@@ -55,13 +55,13 @@ class MyState extends ChangeNotifier {
   }
 
   void addCard(ChristmasCard card) async {
-    await Api.addCard(card);
-    await getList();
+    _list = await Api.addCard(card);
+    notifyListeners();
   }
 
   void removeCard(ChristmasCard card) async {
-    await Api.deleteCard(card.id);
-    await getList();
+    _list = await Api.deleteCard(card.id);
+    notifyListeners();
   }
 
   void setFilterBy(String filterBy) {
