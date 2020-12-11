@@ -25,7 +25,7 @@ class EditCardViewState extends State<EditCardView> {
     this.alignment = card.alignment;
     this.color = card.color;
 
-    textEditingController = TextEditingController(text: card.message);
+    textEditingController = TextEditingController();
 
     textEditingController.addListener(() {
       setState(() {
