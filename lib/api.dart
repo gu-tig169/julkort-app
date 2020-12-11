@@ -24,7 +24,7 @@ class Api {
   }
 
   static Future deleteCard(String cardId) async {
-    var response = await http.delete('$API_URL/julkort/$cardId?key=$API_KEY');
+    var response = await http.delete('$API_URL/julkort/$cardId?key=$API_KEY&_confirm=true');
     var bodyString = response.body;
     var list = jsonDecode(bodyString);
 
